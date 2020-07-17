@@ -3,17 +3,17 @@ Attribute VB_Name = "LayoutMacros"
 ' Copyright (c) 2020 Nonki Takahashi.  The MIT License.
 '
 Sub GetLayout()
-Attribute GetLayout.VB_Description = "Get layout of pictures and outlines as CSS."
+Attribute GetLayout.VB_Description = "画像や枠線のレイアウトを CSS として取得する。"
 Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
 '
 ' GetLayout Macro
-' Get layout of pictures and outlines as CSS
+' 画像や枠線のレイアウトを CSS として取得する。
 '
     Dim mm, pw, wh, pl, pt As Single
     
     mm = 2.83464 '[pt/mm]
     
-    ' Get body style
+    ' body のスタイルを取得
     Msg = Msg + "body {" + vbCrLf
     Msg = Msg + "    background-color: lightgray;" + vbCrLf
     Msg = Msg + "    text-align: center;" + vbCrLf
@@ -21,7 +21,7 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
     Msg = Msg + "    font-size: 10pt;" + vbCrLf
     Msg = Msg + "}" + vbCrLf
     
-    ' Get page margines
+    ' ページの余白を取得
     With ActiveDocument.PageSetup
         pt = .TopMargin / mm '[mm]
         pr = .RightMargin / mm '[mm]
@@ -29,7 +29,7 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
         pl = .LeftMargin / mm '[mm]
     End With
     
-    ' Get page size
+    ' ページのサイズを取得
     With ActiveDocument.ActiveWindow.Panes(1).Pages.Item(1)
         pw = .Width / mm '[mm]
         ph = .Height / mm '[mm]
@@ -44,13 +44,13 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
         Msg = Msg + "    padding-right: " + Format(pr, "0.000") + "mm;" + vbCrLf
         Msg = Msg + "    padding-bottom: " + Format(pb, "0.000") + "mm;" + vbCrLf
         Msg = Msg + "    padding-left: " + Format(pl, "0.000") + "mm;" + vbCrLf
-        ' display for CSS Preview
+        ' CSS Preview のための表示
         Msg = Msg + "    --content: <p>""page""</p>;" + vbCrLf
         Msg = Msg + "}" + vbCrLf + vbCrLf
     End With
     
     
-    ' Get pictures / outlines sizes
+    ' 画像/枠線のサイズを取得
     For I = ActiveDocument.Shapes.Count To 1 Step -1
         With ActiveDocument.Shapes(I)
             Dim r As Byte, g As Byte, b As Byte
@@ -88,13 +88,13 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
                 Msg = Msg + "    padding-bottom: " + Format(mb, "0.000") + "mm;" + vbCrLf
                 Msg = Msg + "    padding-left: " + Format(ml, "0.000") + "mm;" + vbCrLf
             End If
-            ' display for CSS Preview
+            ' CSS Preview のための表示
             Msg = Msg + "    --content: <p>""" + .Name + """</p>;" + vbCrLf
             Msg = Msg + "}" + vbCrLf + vbCrLf
         End With
     Next
     
-    ' Create a new text box and set the result
+    ' 新しいテキストボックスを作成して結果をセット
     With ActiveDocument.Shapes.AddTextbox(msoTextOrientationHorizontal, _
         10, 10, 300, 600)
         .Name = "layout"
@@ -105,11 +105,11 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
     End With
 End Sub
 Sub ClearLayout()
-Attribute ClearLayout.VB_Description = "Remove created layout."
+Attribute ClearLayout.VB_Description = "作成したレイアウトを削除。"
 Attribute ClearLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.ClearLayout"
 '
 ' ClearLayout Macro
-' Remove created layout
+' 作成したレイアウトを削除
 '
     For I = ActiveDocument.Shapes.Count To 1 Step -1
         With ActiveDocument.Shapes(I)
