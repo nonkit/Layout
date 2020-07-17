@@ -19,7 +19,7 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
     Msg = Msg + "    text-align: center;" + vbCrLf
     Msg = Msg + "    font-family: 'Meiryo UI';" + vbCrLf
     Msg = Msg + "    font-size: 10pt;" + vbCrLf
-    Msg = Msg + "}" + vbCrLf
+    Msg = Msg + "}" + vbCrLf + vbCrLf
     
     ' Get page margines
     With ActiveDocument.PageSetup
