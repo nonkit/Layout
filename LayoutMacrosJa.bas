@@ -1,10 +1,10 @@
-Attribute VB_Name = "LayoutMacros"
+Attribute VB_Name = "LayoutMacrosJa"
 ' LayoutMacros.bas v0.0.2
 ' Copyright (c) 2020 Nonki Takahashi.  The MIT License.
 '
 Sub GetLayout()
 Attribute GetLayout.VB_Description = "画像や枠線のレイアウトを CSS として取得する。"
-Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
+Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacrosJa.GetLayout"
 '
 ' GetLayout Macro
 ' 画像や枠線のレイアウトを CSS として取得する。
@@ -106,7 +106,7 @@ Attribute GetLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.GetLayout"
 End Sub
 Sub ClearLayout()
 Attribute ClearLayout.VB_Description = "作成したレイアウトを削除。"
-Attribute ClearLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacros.ClearLayout"
+Attribute ClearLayout.VB_ProcData.VB_Invoke_Func = "Normal.LayoutMacrosJa.ClearLayout"
 '
 ' ClearLayout Macro
 ' 作成したレイアウトを削除

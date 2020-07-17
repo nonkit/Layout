@@ -1,44 +1,44 @@
-﻿# Wordマクロを使ったレイアウトの作り方
+﻿# Way to create layout with Word macro
 
 ---
 
-### 使い方
+### Usage
 
-### ページレイアウト
-- \[ページレイアウト\]タブの\[サイズ\]を設定する。
-- \[ページレイアウト\]タブの\[余白\]を設定する。
+### Page Layout
+	Set [Size] in [PAGE LAYOUT] tab.
+	Set [Margins] in [PAGE LAYOUT] tab.
 
-### テキストボックス
-- \[挿入\]タブの\[テキストボックス\]で\[横書きテキストボックスの描画\]を選び、配置する。
-- \[描画ツール\]\[書式\]タブの\[オブジェクトの選択と表示\]でテキストボックスの名前を変更する。
-- \[描画ツール\]\[書式\]タブの\[図形の枠線\]で枠線の色や太さを指定する。
+### Text Box
+- Select [Draw Text Box] in [Text Box] of [INSERT] tab and place it.
+- Change the text box name in [Selection Pane] of [DRAWING TOOLS] [FORMAT] tab.
+- Change the Outline Color and Weight in [Shape Outline] of [DRAWING TOOLS] [FORMAT] tab.
+ 
+### Pictures
+- Select [Pictures] in [INSERT] tab and place it.
+- Change the picture name in [Selection Pane] of [PICTURE TOOLS] [FORMAT] tab.
 
-### 画像
-- \[挿入\]タブの\[画像\]を選び、配置する。
-- \[図ツール\]\[書式\]タブの\[オブジェクトの選択と表示\]で図の名前を変更する。
+### Import Macro
+- Select [Macros] [View Macros] in [VIEW] tab and select [Create].
+- Select [File] [Import File] in VBA window.
+- Select LayoutMacros.bas and push [Open].
 
-### マクロのインポート
-- \[表示\]タブの\[マクロ\]\[マクロの表示\]を選び、\[作成\]を選ぶ。
-- VBAのウィンドウで\[ファイル\]\[ファイルのインポート\]を選ぶ。
-- LayoutMacros.bas を選び\[Open\]を押す。
+### Customize Keyboard Shortcuts
+- Select “Categories:” “Macros” of [Options] [Customize Ribbon] “Keyboard shortcuts:” [Customize] in [FILE] tab.
+- Select “GetLeyout” in “Macros:” click a text box “Press new shortcut keys” and input Alt+L.  Push [Assign].
+- Select “ClearLeyout” in “Macros:” click a text box “Press new shortcut keys” and input Alt+C.  Push [Assign].
 
-### キーボードのユーザー設定
-- \[ファイル\]タブの\[オプション\]\[リボンのユーザー設定\]「ショートカット キー:」\[ユーザー設定\]で「分類:」「マクロ」を選ぶ。
-- 「マクロ:」で「GetLeyout」を選び、「割り当てるキーを押してください」というテキストボックスをクリック後、Alt+L を入力。\[割り当て\]を押す。
-- 「マクロ:」で「ClearLeyout」を選び、「割り当てるキーを押してください」というテキストボックスをクリック後、Alt+C を入力。\[割り当て\]を押す。
-
-### マクロの実行
-- レイアウトしたページで Alt+L を押し、GetLayout を実行。
-- レイアウトの CSS が新しいテキストボックス (layout) に表示されるので、テキストを選択し、コピーし、別のエディタに貼り付け .css ファイルとして保存する。
-- Alt+C を押し、テキストボックス (layout) を削除する。 
+### Run Macro
+- Input Alt+L in a page with layout to run GetLayout.
+- Layout CSS will be displayed in a new text box (layout), so select the text, copy and paste to other editor.  Then save as a .css file.
+- Input Alt+C to delete the text box (layout).
 
 ---
-![ノート JavaScript](../img/Javascript.jpg)
+![Note JavaScript](../img/Javascript.jpg)
 ---
 
-### 目次
-- gacco: ga028 物理プログラミング入門
-- Small Basic インタプリタ
-- BASIC パーサー
-- 開発環境の変化
-- レイアウトエディタ
+### Table of Contents
+- gacco: ga028 Get Started with Physical Programming
+- Small Basic Interpreter
+- BASIC Parser
+- Development Environment Changes
+- Layout Editor
