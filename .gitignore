@@ -1,2 +1,5 @@
+# binary file
+*.zip
+
 # working file
 ~*.*
